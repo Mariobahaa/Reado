@@ -32,6 +32,8 @@ namespace OBS.Models
         [Required]
         public Genre Genre { get; set; }
 
+        [MaxLength(500)]
+        public string Description { get; set; }
 
         public List<UserBook> UserBook { get; set; }
     }

@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using OBS.Models;
+using OBS.Services;
 
 namespace OBS
 {
@@ -28,6 +29,7 @@ namespace OBS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IUserBookService, UserBookService>();
             services.AddDbContext<BooksContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("BooksCon"))
             );
